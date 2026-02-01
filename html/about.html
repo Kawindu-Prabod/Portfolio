@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me | Kawindu Prabod</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .glass { background: rgba(30, 58, 138, 0.9); backdrop-filter: blur(10px); }
+    </style>
+</head>
+
+<body class="bg-gray-50 flex flex-col min-h-screen pt-16" x-data="{ mobileMenuOpen: false }">
+
+    <header class="glass text-white shadow-xl fixed w-full top-0 left-0 z-50">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="../index.html" class="text-2xl font-bold tracking-tighter">Kawindu Prabod Subasinghe</a>
+            <nav class="hidden md:flex space-x-8 font-medium">
+                <a href="../index.html" class="hover:text-yellow-400 transition">Home</a>
+                <a href="about.html" class="text-yellow-400 font-bold">About</a>
+                <a href="projects.html" class="hover:text-yellow-400 transition">Projects</a>
+                <a href="contact.html" class="hover:text-yellow-400 transition">Contact</a>
+            </nav>
+            <button @click="mobileMenuOpen = !mobileMenuOpen" class="md:hidden p-2 focus:outline-none">
+                <svg x-show="!mobileMenuOpen" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                <svg x-show="mobileMenuOpen" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+        </div>
+    </header>
+
+    <div x-show="mobileMenuOpen" x-transition class="md:hidden fixed inset-0 z-40 pt-20 bg-blue-900 text-white flex flex-col items-center space-y-8 text-xl">
+        <a href="../index.html" @click="mobileMenuOpen = false">Home</a>
+        <a href="about.html" @click="mobileMenuOpen = false">About</a>
+        <a href="projects.html" @click="mobileMenuOpen = false">Projects</a>
+        <a href="contact.html" @click="mobileMenuOpen = false">Contact</a>
+    </div>
+
+    <main class="flex-grow">
+        <section class="py-20 px-6">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-4xl font-bold text-gray-900 mb-6">About Me</h2>
+                <div class="h-1.5 w-20 bg-yellow-500 mx-auto mb-10 rounded-full"></div>
+                
+                <p class="text-xl text-gray-700 leading-relaxed mb-6">
+                    I'm <span class="font-bold text-blue-900">Kawindu Prabod</span>, a Network Engineering specialist student at the 
+                    <span class="border-b-2 border-blue-200">University of Sri Jayewardenepura</span>.
+                </p>
+                <p class="text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto">
+                    Currently pursuing a BICT (Hons), I focus on building secure, scalable network infrastructures. 
+                    I bridge the gap between complex system administration and real-world technology applications.
+                </p>
+            </div>
+        </section>
+
+        <section class="bg-white py-16 px-6 border-y border-gray-100">
+            <div class="max-w-6xl mx-auto text-center">
+                <h3 class="text-2xl font-bold text-gray-800 mb-8">Technical Proficiency</h3>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <span class="px-5 py-2 bg-blue-50 text-blue-700 rounded-full font-semibold border border-blue-100"><i class="fas fa-network-wired mr-2"></i>Cisco Networking</span>
+                    <span class="px-5 py-2 bg-blue-50 text-blue-700 rounded-full font-semibold border border-blue-100"><i class="fab fa-linux mr-2"></i>Linux Administration</span>
+                    <span class="px-5 py-2 bg-blue-50 text-blue-700 rounded-full font-semibold border border-blue-100"><i class="fas fa-shield-alt mr-2"></i>Cybersecurity</span>
+                    <span class="px-5 py-2 bg-blue-50 text-blue-700 rounded-full font-semibold border border-blue-100"><i class="fas fa-server mr-2"></i>System Admin</span>
+                    <span class="px-5 py-2 bg-blue-50 text-blue-700 rounded-full font-semibold border border-blue-100"><i class="fab fa-python mr-2"></i>Python Scripts</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 px-6 bg-gray-50">
+            <div class="max-w-5xl mx-auto">
+                <h2 class="text-3xl font-bold text-gray-900 mb-12 flex items-center">
+                    <i class="fas fa-certificate text-yellow-500 mr-4"></i> Professional Certifications
+                </h2>
+                
+               <!--  <div class="grid gap-6">
+                    <div class="group bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex flex-col md:flex-row md:items-center justify-between hover:shadow-md transition">
+                        <div class="flex items-start space-x-4">
+                            <div class="text-blue-900 bg-blue-50 p-4 rounded-xl group-hover:bg-blue-900 group-hover:text-white transition">
+                                <i class="fas fa-project-diagram fa-lg"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900">Networking Fundamentals</h3>
+                                <p class="text-gray-500 text-sm">University of Sri Jayewardenepura</p>
+                                <span class="text-xs font-bold text-blue-600 uppercase tracking-widest">May 2024</span>
+                            </div>
+                        </div>
+                        <a href="certificates/net-fundamentals.pdf" target="_blank" class="mt-4 md:mt-0 inline-flex items-center justify-center px-6 py-2.5 bg-gray-900 text-white rounded-xl hover:bg-gray-700 transition font-medium">
+                            View PDF <i class="fas fa-external-link-alt ml-2 text-xs"></i>
+                        </a>
+                    </div>
+
+                    <div class="group bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex flex-col md:flex-row md:items-center justify-between hover:shadow-md transition">
+                        <div class="flex items-start space-x-4">
+                            <div class="text-blue-900 bg-blue-50 p-4 rounded-xl group-hover:bg-blue-900 group-hover:text-white transition">
+                                <i class="fas fa-user-shield fa-lg"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900">Cybersecurity Basics</h3>
+                                <p class="text-gray-500 text-sm">Coursera</p>
+                                <span class="text-xs font-bold text-blue-600 uppercase tracking-widest">July 2024</span>
+                            </div>
+                        </div>
+                        <a href="#" class="mt-4 md:mt-0 inline-flex items-center justify-center px-6 py-2.5 bg-gray-900 text-white rounded-xl hover:bg-gray-700 transition font-medium">
+                            View PDF <i class="fas fa-external-link-alt ml-2 text-xs"></i>
+                        </a>
+                    </div>
+
+                    <div class="group bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex flex-col md:flex-row md:items-center justify-between hover:shadow-md transition">
+                        <div class="flex items-start space-x-4">
+                            <div class="text-blue-900 bg-blue-50 p-4 rounded-xl group-hover:bg-blue-900 group-hover:text-white transition">
+                                <i class="fab fa-linux fa-lg"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900">Linux Administration</h3>
+                                <p class="text-gray-500 text-sm">Udemy</p>
+                                <span class="text-xs font-bold text-blue-600 uppercase tracking-widest">June 2024</span>
+                            </div>
+                        </div>
+                        <a href="#" class="mt-4 md:mt-0 inline-flex items-center justify-center px-6 py-2.5 bg-gray-900 text-white rounded-xl hover:bg-gray-700 transition font-medium">
+                            View PDF <i class="fas fa-external-link-alt ml-2 text-xs"></i>
+                        </a>
+                    </div>
+                </div> -->
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-900 text-white py-10 text-center">
+        <p class="text-gray-400">&copy; 2026 Kawindu Prabod. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
